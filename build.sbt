@@ -15,3 +15,8 @@ libraryDependencies += "org.scalatestplus.play" %% "scalatestplus-play" % "7.0.0
 
 // Adds additional packages into conf/routes
 // play.sbt.routes.RoutesKeys.routesImport += "winter.binders._"
+
+resolvers += "tencent" at "https://mirrors.cloud.tencent.com/repository/maven-public/"
+resolvers += "aliyun" at "https://maven.aliyun.com/repository/public"
+
+
