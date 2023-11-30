@@ -23,6 +23,21 @@ apt -y update
 
 apt -y install sbt
 
+mkdir -p ~/.sbt
+
+echo "
+	[repositories]
+		local
+		aliyun-maven-public: https://maven.aliyun.com/repository/public
+		huaweicloud-maven: https://repo.huaweicloud.com/repository/maven/
+		aliyun-maven-central: https://maven.aliyun.com/repository/central
+		maven-central: https://repo1.maven.org/maven2/
+" > ~/.sbt/repositories 
+
+export SBT_LAUNCH_REPO="https://maven.aliyun.com/repository/public"
+
+export SBT_OPTS="-Dsbt.override.build.repos=true"
+
 if [ ! -d ~/Winter-play ]; then cd ~/ ; git clone https://github.com/AndyInAi/Winter-play.git; fi
 
 cd  ~/Winter-play
